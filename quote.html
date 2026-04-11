@@ -79,11 +79,11 @@ textarea.form-input{resize:vertical;min-height:120px;}
   <a href="index.html" class="nav-logo"><img src="images/logo-new.png" alt="Prostar CNC"></a>
   <ul class="nl">
     <li><a href="index.html">الرئيسية</a></li>
-    <li><a href="index.html#cats">الماكينات</a></li>
+    <li><a href="machines.html">الماكينات</a></li>
     <li><a href="services.html">الخدمات</a></li>
     <li><a href="about.html">من نحن</a></li>
-    <li><a href="index.html#faq">الأسئلة الشائعة</a></li>
-    <li><a href="index.html#contact">تواصل معنا</a></li>
+    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+    <li><a href="contact.html">تواصل معنا</a></li>
     <li><a href="quote.html" class="ncta active">طلب عرض سعر</a></li>
   </ul>
   <div class="mt"><span></span><span></span><span></span></div>
@@ -99,75 +99,25 @@ textarea.form-input{resize:vertical;min-height:120px;}
 <section>
   <div class="ctn">
     <div class="form-grid">
-      <div class="form-card rv">
-        <h2>بيانات الطلب</h2>
-        <p>جميع الحقول المعلّمة بـ <span style="color:var(--teal)">*</span> مطلوبة</p>
+      <form class="form-card rv" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="160d4a35-0124-479a-a914-a1d14af365f1">
+        <h2>طلب عرض سعر</h2>
+        <p>يرجى تعبئة بياناتك وسنستلم رسالتك مباشرة عبر Web3Forms.</p>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>الاسم الكامل <span class="req">*</span></label>
-            <input type="text" class="form-input" placeholder="أدخل اسمك الكامل">
-          </div>
-          <div class="form-group">
-            <label>اسم الشركة / المؤسسة</label>
-            <input type="text" class="form-input" placeholder="اسم شركتك (اختياري)">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>رقم الجوال <span class="req">*</span></label>
-            <input type="tel" class="form-input" placeholder="05xxxxxxxx" dir="ltr" style="text-align:right">
-          </div>
-          <div class="form-group">
-            <label>البريد الإلكتروني</label>
-            <input type="email" class="form-input" placeholder="email@example.com" dir="ltr" style="text-align:right">
-          </div>
+        <div class="form-group">
+          <label>الاسم <span class="req">*</span></label>
+          <input type="text" name="name" class="form-input" placeholder="أدخل اسمك الكامل" required>
         </div>
         <div class="form-group">
-          <label>المدينة <span class="req">*</span></label>
-          <select class="form-input">
-            <option value="">اختر مدينتك</option>
-            <option>الرياض</option><option>جدة</option><option>مكة المكرمة</option><option>المدينة المنورة</option>
-            <option>الدمام</option><option>الخبر</option><option>الأحساء</option><option>الطائف</option>
-            <option>تبوك</option><option>بريدة</option><option>حائل</option><option>أبها</option>
-            <option>نجران</option><option>جازان</option><option>أخرى</option>
-          </select>
+          <label>البريد الإلكتروني <span class="req">*</span></label>
+          <input type="email" name="email" class="form-input" placeholder="email@example.com" required>
         </div>
         <div class="form-group">
-          <label>نوع الماكينة المطلوبة <span class="req">*</span></label>
-          <select class="form-input">
-            <option value="">اختر نوع الماكينة</option>
-            <option>ماكينة فايبر ليزر (قص معادن)</option>
-            <option>ماكينة ليزر CO2 (قص غير معدني)</option>
-            <option>ماكينة CNC راوتر</option>
-            <option>ماكينة حفر ونقش فايبر</option>
-            <option>ماكينة لحام ليزر</option>
-            <option>ماكينة لف حروف CNC</option>
-            <option>ماكينة بلازما CNC</option>
-            <option>ماكينة كاتر فلات</option>
-            <option>طابعة UV</option>
-            <option>طابعة إيكو سولفنت</option>
-            <option>طابعة DTF</option>
-            <option>طابعة 3D</option>
-            <option>ماكينة لمنيشن</option>
-            <option>معدات ثقيلة (مقص / مكبس)</option>
-            <option>أحتاج استشارة - مش متأكد</option>
-          </select>
+          <label>رسالتك <span class="req">*</span></label>
+          <textarea name="message" class="form-input" placeholder="اكتب تفاصيل طلب عرض السعر أو استفسارك هنا" required></textarea>
         </div>
-        <div class="form-group">
-          <label>تفاصيل إضافية</label>
-          <textarea class="form-input" placeholder="اكتب أي تفاصيل عن احتياجك: نوع المواد، سمك القطع، حجم الإنتاج المطلوب، أو أي أسئلة..."></textarea>
-        </div>
-        <div class="form-group">
-          <label>كيف سمعت عنا؟</label>
-          <select class="form-input">
-            <option value="">اختر (اختياري)</option>
-            <option>بحث جوجل</option><option>انستقرام</option><option>تويتر/X</option>
-            <option>يوتيوب</option><option>توصية من صديق/زميل</option><option>معرض أو فعالية</option><option>أخرى</option>
-          </select>
-        </div>
-        <button class="form-submit" onclick="alert('تم إرسال طلبك بنجاح! سيتواصل معك فريق المبيعات خلال ساعات.')">إرسال طلب عرض السعر</button>
-      </div>
+        <button type="submit" class="form-submit">إرسال الطلب</button>
+      </form>
 
       <div class="sidebar">
         <div class="side-card rv">

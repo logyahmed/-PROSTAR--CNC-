@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ماكينة الحفر بالليزر | بروستار Prostar CNC</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1E2D35;--bg-d:#172329;--bg-dr:#111C22;--bg-c:#243540;--bg-c2:#2A3E4A;--teal:#5BC5C9;--teal-l:#7DD8DB;--teal-dk:#3AABB0;--teal-g:rgba(91,197,201,.25);--wh:#fff;--gr:#8A9FAB;--gr-l:#B5C7D1;--gr-d:#4A6270;--gold:#F2C94C;--f:'Tajawal',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--f);background:var(--bg);color:var(--wh);overflow-x:hidden;direction:rtl;}
+.nav{position:fixed;top:0;right:0;left:0;z-index:1000;height:72px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(30,45,53,.88);backdrop-filter:blur(24px);border-bottom:1px solid rgba(91,197,201,.08);transition:all .4s;}.nav.sc{height:60px;background:rgba(23,35,41,.96);}
+.nav-logo img{height:38px;}.nl{display:flex;gap:28px;list-style:none;align-items:center;}.nl a{color:var(--gr-l);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s;}.nl a:hover,.nl a.active{color:var(--teal);}.ncta{padding:9px 24px!important;background:var(--teal)!important;color:var(--bg-dr)!important;border-radius:7px;font-weight:700!important;}.ncta::after{display:none!important;}.mt{display:none;cursor:pointer;flex-direction:column;gap:5px;}.mt span{width:24px;height:2px;background:var(--teal);}
+.page-hero{padding:140px 48px 60px;background:var(--bg-dr);position:relative;overflow:hidden;}.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(91,197,201,.06) 0%,transparent 60%);}.page-hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(91,197,201,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(91,197,201,.02) 1px,transparent 1px);background-size:70px 70px;}
+.breadcrumb{position:relative;display:flex;gap:8px;margin-bottom:20px;font-size:.85rem;color:var(--gr);max-width:860px;}.breadcrumb a{color:var(--teal);text-decoration:none;}
+.article-hero-title{position:relative;font-size:2.4rem;font-weight:900;line-height:1.4;max-width:860px;margin-bottom:18px;}
+.article-meta{position:relative;display:flex;gap:20px;align-items:center;font-size:.85rem;color:var(--gr);flex-wrap:wrap;}
+.article-meta .tag{padding:5px 14px;border-radius:6px;background:var(--teal);color:var(--bg-dr);font-weight:700;font-size:.78rem;}
+
+section{padding:80px 48px;}.ctn{max-width:1200px;margin:0 auto;}
+
+.article-layout{display:grid;grid-template-columns:1fr 320px;gap:48px;}
+
+/* Article content */
+.article-content{max-width:100%;}
+.article-cover{width:100%;height:400px;background:#E8ECEE;border-radius:16px;margin-bottom:36px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.article-cover .ph{color:#aab;font-size:1rem;text-align:center;}.article-cover .ph span{display:block;color:#ccc;font-size:.8rem;margin-top:6px;}
+
+.article-body h2{font-size:1.6rem;font-weight:800;margin:36px 0 16px;color:var(--teal);position:relative;padding-right:18px;}
+.article-body h2::before{content:'';position:absolute;right:0;top:4px;width:4px;height:100%;background:var(--teal);border-radius:2px;}
+.article-body h3{font-size:1.25rem;font-weight:700;margin:28px 0 12px;}
+.article-body p{font-size:1.02rem;color:var(--gr-l);line-height:2;margin-bottom:18px;}
+.article-body ul{list-style:none;margin:16px 0 24px;padding:0;}
+.article-body ul li{padding:10px 0 10px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.98rem;color:var(--gr-l);line-height:1.7;display:flex;gap:10px;}
+.article-body ul li::before{content:'✓';color:var(--teal);font-weight:900;flex-shrink:0;}
+.article-body blockquote{border-right:4px solid var(--teal);padding:20px 24px;background:rgba(91,197,201,.05);border-radius:0 12px 12px 0;margin:28px 0;font-style:italic;color:var(--gr-l);line-height:1.8;}
+
+/* CTA in article */
+.article-cta{background:linear-gradient(135deg,rgba(91,197,201,.1),rgba(91,197,201,.03));border:1px solid rgba(91,197,201,.2);border-radius:16px;padding:36px;text-align:center;margin:40px 0;}
+.article-cta h3{font-size:1.3rem;font-weight:800;margin-bottom:10px;}
+.article-cta p{color:var(--gr);font-size:.92rem;margin-bottom:20px;}
+.article-cta .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.bp2{padding:12px 28px;border:none;border-radius:8px;font-family:var(--f);font-size:.92rem;font-weight:700;background:var(--teal);color:var(--bg-dr);cursor:pointer;text-decoration:none;transition:all .3s;display:inline-block;}.bp2:hover{background:var(--teal-l);transform:translateY(-2px);}
+.bwa2{padding:12px 28px;border:none;border-radius:8px;font-family:var(--f);font-size:.92rem;font-weight:700;background:#25D366;color:#fff;cursor:pointer;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;}.bwa2:hover{transform:translateY(-2px);}
+
+/* Share */
+.share-bar{display:flex;gap:10px;align-items:center;padding:24px 0;border-top:1px solid rgba(255,255,255,.06);margin-top:36px;}
+.share-bar span{font-size:.9rem;color:var(--gr);font-weight:600;}
+.share-btn{width:40px;height:40px;border-radius:10px;background:var(--bg-c);border:1px solid rgba(91,197,201,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;color:var(--teal);font-size:1rem;text-decoration:none;}
+.share-btn:hover{background:var(--teal);color:var(--bg-dr);}
+
+/* Related */
+.related{margin-top:48px;}
+.related h3{font-size:1.3rem;font-weight:800;margin-bottom:24px;}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.rel-card{background:var(--bg-c);border:1px solid rgba(255,255,255,.04);border-radius:14px;padding:24px;transition:all .3s;}
+.rel-card:hover{border-color:rgba(91,197,201,.18);transform:translateY(-3px);}
+.rel-card .tag{display:inline-block;padding:3px 10px;border-radius:4px;background:rgba(91,197,201,.1);color:var(--teal);font-size:.72rem;font-weight:600;margin-bottom:10px;}
+.rel-card h4{font-size:.98rem;font-weight:700;margin-bottom:6px;line-height:1.5;}
+.rel-card h4 a{color:var(--wh);text-decoration:none;transition:color .3s;}.rel-card h4 a:hover{color:var(--teal);}
+.rel-card .date{font-size:.78rem;color:var(--gr);}
+
+/* Sidebar */
+.sidebar-card{background:var(--bg-c);border:1px solid rgba(91,197,201,.08);border-radius:16px;padding:28px;margin-bottom:24px;}
+.sidebar-card h3{font-size:1.05rem;font-weight:700;color:var(--teal);margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid rgba(91,197,201,.1);}
+.sidebar-card ul{list-style:none;}.sidebar-card ul li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);}.sidebar-card ul li:last-child{border:none;}
+.sidebar-card ul a{color:var(--gr-l);text-decoration:none;font-size:.9rem;transition:color .3s;}.sidebar-card ul a:hover{color:var(--teal);}
+
+.ft{background:var(--bg-dr);padding:72px 48px 26px;border-top:1px solid rgba(91,197,201,.08);}.ftg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}.ftb p{color:var(--gr);line-height:1.85;margin-top:12px;font-size:.9rem;}.ftb img{height:34px;}.ft h4{font-size:1rem;font-weight:700;color:var(--teal);margin-bottom:20px;}.ft ul{list-style:none;}.ft ul li{margin-bottom:10px;}.ft ul a{color:var(--gr);text-decoration:none;font-size:.9rem;}.ft ul a:hover{color:var(--teal);}.ftbot{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;}.ftbot p{color:var(--gr-d);font-size:.8rem;}.ftbot a{color:var(--gr-d);text-decoration:none;}.ftbot a:hover{color:var(--teal);}
+@media(max-width:1024px){.article-layout{grid-template-columns:1fr;}.related-grid{grid-template-columns:1fr;}.ftg{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){section{padding:60px 20px;}.nav{padding:0 20px;}.nl{display:none;}.mt{display:flex;}.article-hero-title{font-size:1.8rem;}.article-cover{height:250px;}.ftg{grid-template-columns:1fr;gap:32px;}.ftbot{flex-direction:column;gap:12px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo"><img src="images/Logo Prostar-01.png?v=2" alt="Prostar CNC"></a>
+  <ul class="nl">
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="index.html#cats">الماكينات</a></li>
+    <li><a href="services.html">الخدمات</a></li>
+    <li><a href="about.html">من نحن</a></li>
+    <li><a href="blog.html" class="active">دليل المشتري</a></li>
+    <li><a href="contact.html">تواصل معنا</a></li>
+    <li><a href="quote.html" class="ncta">طلب عرض سعر</a></li>
+  </ul>
+  <div class="mt"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="breadcrumb"><a href="index.html">الرئيسية</a> / <a href="blog.html">دليل المشتري</a> / <span>ماكينة الحفر بالليزر</span></div>
+  <h1 class="article-hero-title">ماكينة الحفر بالليزر | دقة عالية وحلول احترافية من بروستار</h1>
+  <div class="article-meta">
+    <span class="tag">فايبر ليزر</span>
+    <span>15 يناير 2026</span>
+    <span>وقت القراءة: 5 دقائق</span>
+  </div>
+</div>
+
+<section>
+  <div class="ctn">
+    <div class="article-layout">
+      <div class="article-content">
+        <div class="article-cover"><div class="ph">صورة الغلاف<span>ضع صورة الماكينة هنا — 1200×600</span></div></div>
+
+        <div class="article-body">
+          <p>هل تبحث عن تقنية حديثة تضمن لك دقة عالية في الحفر ونقوش واضحة تدوم طويلاً؟ هل تساءلت يوماً عن الفرق بين ماكينات الحفر المختلفة وأيها يناسب مشروعك؟ في هذا المقال الشامل من بروستار، نستعرض كل ما تحتاج معرفته عن ماكينات الحفر بالليزر.</p>
+
+          <h2>ما هي ماكينة الحفر بالليزر؟</h2>
+          <p>ماكينة الحفر بالليزر هي جهاز يستخدم شعاع ليزر مركّز لحفر أو نقش تصاميم ونصوص على مختلف المواد. تتميز بدقة استثنائية وسرعة عالية مقارنة بطرق الحفر التقليدية، مما يجعلها الخيار المثالي للمشاريع الصناعية والحرفية.</p>
+
+          <h2>أنواع ماكينات الحفر بالليزر</h2>
+          <h3>1. فايبر ليزر (Fiber Laser)</h3>
+          <p>الأنسب للحفر على المعادن والبلاستيك. تتميز بعمر افتراضي طويل يتجاوز 100,000 ساعة تشغيل وصيانة منخفضة.</p>
+          <h3>2. ليزر CO2</h3>
+          <p>الأنسب للحفر على المواد غير المعدنية مثل الخشب والأكريلك والجلد والزجاج. توفر نتائج ممتازة على المواد العضوية.</p>
+
+          <h2>المواد التي يمكن حفرها</h2>
+          <ul>
+            <li>الفولاذ المقاوم للصدأ (ستانلس ستيل)</li>
+            <li>الألمنيوم والنحاس والتيتانيوم</li>
+            <li>البلاستيك والأكريلك</li>
+            <li>الخشب والجلد الطبيعي والصناعي</li>
+            <li>الزجاج والسيراميك</li>
+            <li>المجوهرات والإكسسوارات</li>
+          </ul>
+
+          <h2>لماذا تختار بروستار؟</h2>
+          <blockquote>نحن لا نبيعك ماكينة فقط — نقدم لك حلاً متكاملاً يشمل التركيب والتدريب والصيانة والدعم الفني المستمر. ماكيناتنا متوفرة من المخزون الجاهز مع ضمان سنة كاملة.</blockquote>
+
+          <p>في بروستار نوفر مجموعة متنوعة من ماكينات الحفر بالليزر تناسب كل الميزانيات والاحتياجات، من الماكينات المحمولة الصغيرة للمشاريع الناشئة حتى الماكينات الصناعية الكبيرة لخطوط الإنتاج.</p>
+
+          <!-- CTA -->
+          <div class="article-cta">
+            <h3>مهتم بماكينة حفر ليزر؟</h3>
+            <p>تواصل معنا للحصول على استشارة مجانية وعرض سعر مخصص</p>
+            <div class="btns">
+              <a href="quote.html" class="bp2">طلب عرض سعر</a>
+              <a href="https://wa.me/966566346686" target="_blank" class="bwa2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                واتساب
+              </a>
+            </div>
+          </div>
+
+          <!-- Share -->
+          <div class="share-bar">
+            <span>شارك المقال:</span>
+            <a href="#" class="share-btn">𝕏</a>
+            <a href="#" class="share-btn">f</a>
+            <a href="#" class="share-btn">in</a>
+            <a href="#" class="share-btn">📋</a>
+          </div>
+        </div>
+
+        <!-- Related -->
+        <div class="related">
+          <h3>مقالات ذات صلة</h3>
+          <div class="related-grid">
+            <div class="rel-card"><span class="tag">دليل الشراء</span><h4><a href="#">سعر ماكينة حفر ليزر صغيرة | دليل الشراء والمواصفات</a></h4><div class="date">25 فبراير 2026</div></div>
+            <div class="rel-card"><span class="tag">فايبر ليزر</span><h4><a href="#">كيف تختار قوة ماكينة فايبر ليزر المناسبة؟</a></h4><div class="date">12 مارس 2026</div></div>
+            <div class="rel-card"><span class="tag">ليزر CO2</span><h4><a href="#">الفرق بين ليزر CO2 وفايبر ليزر</a></h4><div class="date">5 مارس 2026</div></div>
+            <div class="rel-card"><span class="tag">CNC راوتر</span><h4><a href="#">أفضل ماكينة سي ان سي من بروستار لعام 2026</a></h4><div class="date">15 فبراير 2026</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div>
+        <div class="sidebar-card">
+          <h3>فهرس المقال</h3>
+          <ul>
+            <li><a href="#">ما هي ماكينة الحفر بالليزر؟</a></li>
+            <li><a href="#">أنواع ماكينات الحفر</a></li>
+            <li><a href="#">المواد التي يمكن حفرها</a></li>
+            <li><a href="#">لماذا تختار بروستار؟</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>أحدث المقالات</h3>
+          <ul>
+            <li><a href="#">سعر ماكينة حفر ليزر صغيرة</a></li>
+            <li><a href="#">أفضل ماكينة سي ان سي 2026</a></li>
+            <li><a href="#">الفرق بين CO2 وفايبر</a></li>
+            <li><a href="#">طابعات UV مقابل إيكو سولفنت</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card" style="background:linear-gradient(135deg,rgba(91,197,201,.12),rgba(91,197,201,.04));border-color:rgba(91,197,201,.2);">
+          <h3 style="border:none;padding:0;margin-bottom:12px;">تحتاج مساعدة؟</h3>
+          <p style="color:var(--gr);font-size:.88rem;line-height:1.7;margin-bottom:18px;">فريقنا جاهز يساعدك تختار الماكينة المناسبة</p>
+          <a href="quote.html" style="display:block;padding:12px;border-radius:10px;background:var(--teal);color:var(--bg-dr);text-align:center;font-weight:700;text-decoration:none;font-size:.92rem;">طلب عرض سعر</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ftg">
+    <div class="ftb"><img src="images/Logo Prostar-01.png?v=2" alt="Prostar"><p>شريكك الموثوق في عالم ماكينات CNC والطابعات الصناعية.</p></div>
+    <div><h4>الماكينات</h4><ul><li><a href="#">فايبر ليزر</a></li><li><a href="#">ليزر CO2</a></li><li><a href="#">CNC راوتر</a></li></ul></div>
+    <div><h4>الخدمات</h4><ul><li><a href="quote.html">طلب عرض سعر</a></li><li><a href="services.html">خدماتنا</a></li><li><a href="blog.html">دليل المشتري</a></li></ul></div>
+    <div><h4>تواصل</h4><ul><li><a href="tel:+966566346686">966566346686+</a></li><li><a href="#">الرياض</a></li></ul></div>
+  </div>
+  <div class="ftbot"><p>© 2026 بروستار Prostar CNC</p><p><a href="#">سياسة الخصوصية</a> · <a href="#">الشروط والأحكام</a></p></div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>50));
+</script>
+</body>
+</html>

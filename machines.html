@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الماكينات | بروستار Prostar CNC Machines</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1E2D35;
+  --bg-dark: #172329;
+  --bg-darker: #111C22;
+  --bg-card: #243540;
+  --bg-card2: #2A3E4A;
+  --teal: #5BC5C9;
+  --teal-light: #7DD8DB;
+  --teal-dark: #3AABB0;
+  --teal-glow: rgba(91,197,201,0.25);
+  --white: #FFFFFF;
+  --white-off: #F4F7F8;
+  --gray: #8A9FAB;
+  --gray-light: #B5C7D1;
+  --gray-dark: #4A6270;
+  --text-dark: #1E2D35;
+  --f: 'Tajawal', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:var(--bg);color:var(--white);overflow-x:hidden;direction:rtl;}
+
+/* LOADER */
+.loader{position:fixed;inset:0;z-index:9999;background:var(--bg-darker);display:flex;align-items:center;justify-content:center;transition:opacity .7s,visibility .7s;}
+.loader.hid{opacity:0;visibility:hidden;pointer-events:none;}
+.loader img{width:200px;animation:lPulse 2s ease-in-out infinite;}
+@keyframes lPulse{0%,100%{opacity:.4;transform:scale(.97);}50%{opacity:1;transform:scale(1);}}
+.loader .bar{width:160px;height:2px;background:var(--bg-card);margin:20px auto 0;border-radius:2px;overflow:hidden;}
+.loader .bar::after{content:'';display:block;width:40%;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-light));animation:lSlide 1s ease-in-out infinite;}
+@keyframes lSlide{0%{transform:translateX(250%);}100%{transform:translateX(-100%);}}
+
+/* NAV */
+.nav{position:fixed;top:0;right:0;left:0;z-index:1000;height:72px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(30,45,53,.88);backdrop-filter:blur(24px);border-bottom:1px solid rgba(91,197,201,.08);transition:all .4s;}
+.nav.sc{height:60px;background:rgba(23,35,41,.96);border-bottom-color:rgba(91,197,201,.2);}
+.nav-logo img{height:38px;transition:height .3s;}
+.nav.sc .nav-logo img{height:32px;}
+.nl{display:flex;gap:28px;list-style:none;align-items:center;}
+.nl a{color:var(--gray-light);text-decoration:none;font-size:.9rem;font-weight:500;position:relative;transition:color .3s;}
+.nl a:hover{color:var(--teal);}
+.nl a::after{content:'';position:absolute;bottom:-3px;right:0;width:0;height:2px;background:var(--teal);transition:width .3s;}
+.nl a:hover::after{width:100%;}
+.ncta{padding:9px 24px!important;background:var(--teal)!important;color:var(--bg-darker)!important;border-radius:7px;font-weight:700!important;transition:all .3s!important;}
+.ncta:hover{background:var(--teal-light)!important;transform:translateY(-2px)!important;box-shadow:0 8px 28px var(--teal-glow)!important;}
+.ncta::after{display:none!important;}
+.mt{display:none;cursor:pointer;flex-direction:column;gap:5px;}
+.mt span{width:24px;height:2px;background:var(--teal);transition:.3s;}
+
+/* BREADCRUMB */
+.breadcrumb{margin:100px 48px 40px;font-size:.9rem;color:var(--gray);}
+.breadcrumb a{color:var(--teal);text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+
+/* CATS */
+.cats{padding:60px 0;}
+.ctn{max-width:1400px;margin:0 auto;padding:0 48px;}
+.sh{text-align:center;margin-bottom:60px;}
+.stag{display:inline-block;padding:8px 20px;border-radius:50px;border:1px solid rgba(91,197,201,.25);background:rgba(91,197,201,.06);font-size:.8rem;color:var(--teal);margin-bottom:20px;}
+.stitle{font-size:2.5rem;font-weight:900;margin-bottom:10px;}
+.ssub{font-size:1.1rem;color:var(--gray);max-width:600px;margin:0 auto;}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-bottom:80px;}
+.cc{background:var(--bg-card);padding:30px;border-radius:12px;border:1px solid rgba(91,197,201,.1);transition:all .3s;}
+.cc:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(91,197,201,.1);}
+.ccount{font-size:.8rem;color:var(--teal);margin-bottom:10px;}
+.cline{width:40px;height:2px;background:var(--teal);margin-bottom:15px;}
+.cn{font-size:1.3rem;font-weight:700;margin-bottom:10px;}
+.cd{color:var(--gray);line-height:1.6;}
+
+/* PRODUCTS */
+.products{padding:60px 0;}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;}
+.pc{background:var(--bg-card);border-radius:12px;overflow:hidden;border:1px solid rgba(91,197,201,.1);transition:all .3s;}
+.pc:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(91,197,201,.1);}
+.pi{height:200px;background:var(--bg-card2);display:flex;align-items:center;justify-content:center;position:relative;}
+.pbadge{position:absolute;top:15px;right:15px;background:var(--teal);color:var(--bg-darker);padding:5px 12px;border-radius:20px;font-size:.7rem;font-weight:700;}
+.placeholder-text{font-size:.9rem;color:var(--gray);text-align:center;}
+.placeholder-text span{display:block;font-size:.7rem;margin-top:5px;}
+.pinfo{padding:25px;}
+.pname{font-size:1.2rem;font-weight:700;margin-bottom:5px;}
+.pcat{font-size:.85rem;color:var(--teal);margin-bottom:15px;}
+.pacts{display:flex;gap:10px;}
+.pbtn{padding:10px 20px;border:none;border-radius:6px;font-family:var(--f);font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;}
+.pp{background:var(--teal);color:var(--bg-darker);}
+.pp:hover{background:var(--teal-light);}
+.ps{background:transparent;color:var(--teal);border:1px solid rgba(91,197,201,.35);}
+.ps:hover{background:rgba(91,197,201,.08);border-color:var(--teal);}
+
+/* FOOTER */
+.ft{background:var(--bg-darker);padding:60px 0 20px;border-top:1px solid rgba(91,197,201,.08);}
+.ftg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-bottom:40px;}
+.ftb img{height:40px;margin-bottom:15px;}
+.ftb p{color:var(--gray);line-height:1.6;margin-bottom:20px;}
+.ft h4{font-size:1.1rem;font-weight:700;margin-bottom:15px;color:var(--white);}
+.ft ul{list-style:none;}
+.ft li{margin-bottom:8px;}
+.ft a{color:var(--gray-light);text-decoration:none;transition:color .3s;}
+.ft a:hover{color:var(--teal);}
+.ftbot{border-top:1px solid rgba(91,197,201,.08);padding-top:20px;text-align:center;}
+.ftbot p{font-size:.9rem;color:var(--gray);margin-bottom:5px;}
+.ftbot a{color:var(--teal);text-decoration:none;margin:0 10px;}
+.ftbot a:hover{text-decoration:underline;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{padding:0 20px;height:60px;}
+  .nav-logo img{height:32px;}
+  .nl{gap:20px;}
+  .nl a{font-size:.8rem;}
+  .mt{display:flex;}
+  .nl{position:fixed;top:60px;right:0;left:0;background:var(--bg);flex-direction:column;padding:20px;transform:translateX(100%);transition:transform .3s;}
+  .nl.show{transform:none;}
+  .ctn{padding:0 20px;}
+  .sh{margin-bottom:40px;}
+  .stitle{font-size:2rem;}
+  .cg{grid-template-columns:1fr;}
+  .pg{grid-template-columns:1fr;}
+  .ftg{grid-template-columns:1fr;}
+}
+
+/* ANIMATIONS */
+.rv{opacity:0;transform:translateY(30px);transition:all .6s;}
+.vis{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+<div class="loader" id="loader"><img src="images/logo-new.png" alt="Prostar"><div class="bar"></div></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo"><img src="images/logo-new.png" alt="Prostar CNC"></a>
+  <ul class="nl">
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="machines.html" class="active">الماكينات</a></li>
+    <li><a href="services.html">الخدمات</a></li>
+    <li><a href="about.html">من نحن</a></li>
+    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+    <li><a href="contact.html">تواصل معنا</a></li>
+    <li><a href="quote.html" class="ncta">طلب عرض سعر</a></li>
+  </ul>
+  <div class="mt" onclick="document.querySelector('.nl').classList.toggle('show')"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">الرئيسية</a> / <span>الماكينات</span>
+</div>
+
+<section class="cats">
+  <div class="ctn">
+    <div class="sh rv">
+      <div class="stag">تصنيفاتنا</div>
+      <h2 class="stitle">ماكينات لكل احتياج صناعي</h2>
+      <p class="ssub">اختر التصنيف المناسب لعملك واستعرض مجموعة ماكيناتنا المتنوعة</p>
+    </div>
+    <div class="cg">
+      <div class="cc rv">
+        <span class="ccount">8 ماكينات</span>
+        <div class="cline"></div>
+        <h3 class="cn">قص المعادن بالليزر</h3>
+        <p class="cd">ماكينات فايبر ليزر لقص جميع أنواع المعادن بدقة متناهية وسرعة عالية</p>
+      </div>
+      <div class="cc rv">
+        <span class="ccount">6 ماكينات</span>
+        <div class="cline"></div>
+        <h3 class="cn">ليزر CO2</h3>
+        <p class="cd">لقص وحفر المواد غير المعدنية: خشب، أكريلك، جلد، قماش</p>
+      </div>
+      <div class="cc rv">
+        <span class="ccount">4 ماكينات</span>
+        <div class="cline"></div>
+        <h3 class="cn">CNC راوتر</h3>
+        <p class="cd">لقطع الخشب والفوركس والكلادينج ونقش ثلاثي الأبعاد</p>
+      </div>
+      <div class="cc rv">
+        <span class="ccount">4 ماكينات</span>
+        <div class="cline"></div>
+        <h3 class="cn">الحفر والنقش</h3>
+        <p class="cd">ماكينات فايبر ليزر للوسم والنقش على المعادن والبلاستيك</p>
+      </div>
+      <div class="cc rv">
+        <span class="ccount">2 ماكينة</span>
+        <div class="cline"></div>
+        <h3 class="cn">اللحام بالليزر</h3>
+        <p class="cd">لحام دقيق وقوي بتقنية الليزر لجميع أنواع المعادن</p>
+      </div>
+      <div class="cc rv">
+        <span class="ccount">2 ماكينة</span>
+        <div class="cline"></div>
+        <h3 class="cn">لف الحروف</h3>
+        <p class="cd">ماكينات CNC لف حروف احترافية للوحات الإعلانية</p>
+      </div>
+      <div class="cc rv">
+        <span class="ccount">5 طابعات</span>
+        <div class="cline"></div>
+        <h3 class="cn">الطابعات الصناعية</h3>
+        <p class="cd">طابعات UV، إيكو سولفنت، DTF، وثلاثية الأبعاد</p>
+      </div>
+      <div class="cc rv">
+        <span class="ccount">2 ماكينة</span>
+        <div class="cline"></div>
+        <h3 class="cn">المعدات الثقيلة</h3>
+        <p class="cd">مقصات ومكابس ثني الصفائح المعدنية بدقة عالية</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="ctn">
+    <div class="sh rv">
+      <div class="stag">منتجاتنا</div>
+      <h2 class="stitle">أبرز الماكينات</h2>
+      <p class="ssub">مجموعة مختارة من أكثر ماكيناتنا طلباً</p>
+    </div>
+    <div class="pg">
+      <div class="pc rv">
+        <div class="pi">
+          <span class="pbadge">الأكثر مبيعاً</span>
+          <div class="placeholder-text">صورة الماكينة<span>ارفع صورة المنتج هنا</span></div>
+        </div>
+        <div class="pinfo">
+          <h3 class="pname">ماكينة فايبر ليزر UN-60150CN</h3>
+          <div class="pcat">فايبر ليزر • قص المعادن</div>
+          <div class="pacts">
+            <button class="pbtn pp">طلب عرض سعر</button>
+            <button class="pbtn ps">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+      <div class="pc rv">
+        <div class="pi">
+          <div class="placeholder-text">صورة الماكينة<span>ارفع صورة المنتج هنا</span></div>
+        </div>
+        <div class="pinfo">
+          <h3 class="pname">CNC راوتر 52-Inline Tool Changer</h3>
+          <div class="pcat">CNC راوتر • قطع ونقش</div>
+          <div class="pacts">
+            <button class="pbtn pp">طلب عرض سعر</button>
+            <button class="pbtn ps">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+      <div class="pc rv">
+        <div class="pi">
+          <span class="pbadge">جديد</span>
+          <div class="placeholder-text">صورة الماكينة<span>ارفع صورة المنتج هنا</span></div>
+        </div>
+        <div class="pinfo">
+          <h3 class="pname">ماكينة اللحام بالليزر 4×1</h3>
+          <div class="pcat">لحام ليزر • فايبر</div>
+          <div class="pacts">
+            <button class="pbtn pp">طلب عرض سعر</button>
+            <button class="pbtn ps">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+      <div class="pc rv">
+        <div class="pi">
+          <div class="placeholder-text">صورة الماكينة<span>ارفع صورة المنتج هنا</span></div>
+        </div>
+        <div class="pinfo">
+          <h3 class="pname">طابعة UV احترافية I3200-U1</h3>
+          <div class="pcat">طابعات UV • صناعية</div>
+          <div class="pacts">
+            <button class="pbtn pp">طلب عرض سعر</button>
+            <button class="pbtn ps">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+      <div class="pc rv">
+        <div class="pi">
+          <div class="placeholder-text">صورة الماكينة<span>ارفع صورة المنتج هنا</span></div>
+        </div>
+        <div class="pinfo">
+          <h3 class="pname">آلة حفر الليزر المحمولة USJ1010H</h3>
+          <div class="pcat">فايبر حفر • محمولة</div>
+          <div class="pacts">
+            <button class="pbtn pp">طلب عرض سعر</button>
+            <button class="pbtn ps">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+      <div class="pc rv">
+        <div class="pi">
+          <div class="placeholder-text">صورة الماكينة<span>ارفع صورة المنتج هنا</span></div>
+        </div>
+        <div class="pinfo">
+          <h3 class="pname">ماكينة الكاتر فلات UMTC06</h3>
+          <div class="pcat">كاتر فلات • قطع متعدد</div>
+          <div class="pacts">
+            <button class="pbtn pp">طلب عرض سعر</button>
+            <button class="pbtn ps">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ftg">
+    <div class="ftb">
+      <img src="images/logo-new.png" alt="Prostar">
+      <p>شريكك الموثوق في عالم ماكينات CNC والطابعات الصناعية. حلول متكاملة من التوريد والتركيب إلى التدريب والصيانة.</p>
+    </div>
+    <div>
+      <h4>الماكينات</h4>
+      <ul>
+        <li><a href="machines.html">فايبر ليزر</a></li>
+        <li><a href="machines.html">ليزر CO2</a></li>
+        <li><a href="machines.html">CNC راوتر</a></li>
+        <li><a href="machines.html">لحام ليزر</a></li>
+        <li><a href="machines.html">لف حروف</a></li>
+        <li><a href="machines.html">الطابعات</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>الخدمات</h4>
+      <ul>
+        <li><a href="quote.html">طلب عرض سعر</a></li>
+        <li><a href="services.html">طلب صيانة</a></li>
+        <li><a href="services.html">التدريب</a></li>
+        <li><a href="services.html">قطع الغيار</a></li>
+        <li><a href="services.html">الدعم الفني</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>تواصل معنا</h4>
+      <ul>
+        <li><a href="tel:+966566346686">مبيعات: 966566346686+</a></li>
+        <li><a href="tel:+966566326686">صيانة: 966566326686+</a></li>
+        <li><a href="tel:+966566306686">إدارة: 966566306686+</a></li>
+        <li><a href="contact.html">الرياض، المملكة العربية السعودية</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    <p>© 2026 بروستار Prostar CNC — جميع الحقوق محفوظة</p>
+    <p><a href="#">سياسة الخصوصية</a> · <a href="#">الشروط والأحكام</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hid'),1400);});
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('sc',scrollY>50);});
+const obs=new IntersectionObserver(e=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('vis'),i*70);});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
