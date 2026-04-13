@@ -10,13 +10,16 @@ Deployed on Vercel: [prostar-cnc.vercel.app](https://prostar-cnc.vercel.app)
 prostar-site/
 ├── index.html          # الصفحة الرئيسية
 ├── about.html          # من نحن
-├── services.html       # الخدمات
+├── machines.html       # الماكينات
+├── services.html       # الخدمات (تشمل الصيانة)
 ├── contact.html        # تواصل معنا
 ├── quote.html          # طلب عرض سعر
-├── maintenance.html    # طلب صيانة
+├── careers.html        # الوظائف
+├── blog.html           # المدونة
+├── article.html        # صفحة المقال
 ├── faq.html            # الأسئلة الشائعة
 ├── images/             # صور الماكينات والشعار
-│   └── logo.png
+│   └── logo-new.png
 ├── vercel.json         # Vercel config
 └── package.json
 ```

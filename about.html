@@ -109,7 +109,7 @@ section{padding:100px 48px;}
 .ssub{font-size:1rem;color:var(--gr);max-width:560px;margin:12px auto 0;line-height:1.75;}
 
 @media(max-width:1024px){.story-grid{grid-template-columns:1fr;}.val-grid{grid-template-columns:repeat(2,1fr);}.stats-row{grid-template-columns:repeat(2,1fr);}.ftg{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){section{padding:72px 20px;}.nav{padding:0 20px;}.nl{display:none;}.mt{display:flex;}.page-hero h1{font-size:2rem;}.stitle{font-size:1.8rem;}.val-grid{grid-template-columns:1fr;}.stats-row{grid-template-columns:1fr 1fr;}.ftg{grid-template-columns:1fr;gap:32px;}.ftbot{flex-direction:column;gap:12px;text-align:center;}}
+@media(max-width:768px){section{padding:72px 20px;}.nav{padding:0 20px;}.nl{display:none;}.mt{display:flex;}.nl{position:fixed;top:60px;right:0;left:0;background:var(--bg);flex-direction:column;padding:20px;transform:translateX(100%);transition:transform .3s;}.nl.show{transform:none;}.page-hero h1{font-size:2rem;}.stitle{font-size:1.8rem;}.val-grid{grid-template-columns:1fr;}.stats-row{grid-template-columns:1fr 1fr;}.ftg{grid-template-columns:1fr;gap:32px;}.ftbot{flex-direction:column;gap:12px;text-align:center;}}
 </style>
 </head>
 <body>
@@ -126,7 +126,7 @@ section{padding:100px 48px;}
     <li><a href="contact.html">تواصل معنا</a></li>
     <li><a href="quote.html" class="ncta">طلب عرض سعر</a></li>
   </ul>
-  <div class="mt"><span></span><span></span><span></span></div>
+  <div class="mt" onclick="document.querySelector('.nl').classList.toggle('show')"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- PAGE HERO -->
@@ -244,11 +244,11 @@ section{padding:100px 48px;}
 <footer class="ft">
   <div class="ftg">
     <div class="ftb"><img src="images/logo-new.png" alt="Prostar"><p>شريكك الموثوق في عالم ماكينات CNC والطابعات الصناعية.</p></div>
-    <div><h4>الماكينات</h4><ul><li><a href="#">فايبر ليزر</a></li><li><a href="#">ليزر CO2</a></li><li><a href="#">CNC راوتر</a></li><li><a href="#">لحام ليزر</a></li><li><a href="#">الطابعات</a></li></ul></div>
-    <div><h4>الخدمات</h4><ul><li><a href="quote.html">طلب عرض سعر</a></li><li><a href="#">طلب صيانة</a></li><li><a href="services.html">خدماتنا</a></li></ul></div>
-    <div><h4>تواصل معنا</h4><ul><li><a href="tel:+966566346686">مبيعات: 966566346686+</a></li><li><a href="tel:+966566326686">صيانة: 966566326686+</a></li><li><a href="#">الرياض، السعودية</a></li></ul></div>
+    <div><h4>الماكينات</h4><ul><li><a href="machines.html">فايبر ليزر</a></li><li><a href="machines.html">ليزر CO2</a></li><li><a href="machines.html">CNC راوتر</a></li><li><a href="machines.html">لحام ليزر</a></li><li><a href="machines.html">الطابعات</a></li></ul></div>
+    <div><h4>الخدمات</h4><ul><li><a href="quote.html">طلب عرض سعر</a></li><li><a href="services.html">طلب صيانة</a></li><li><a href="services.html">خدماتنا</a></li></ul></div>
+    <div><h4>تواصل معنا</h4><ul><li><a href="tel:+966566346686">مبيعات: +966 566 346 686</a></li><li><a href="tel:+966566326686">صيانة: +966 566 326 686</a></li><li><a href="contact.html">الرياض، السعودية</a></li></ul></div>
   </div>
-  <div class="ftbot"><p>© 2026 بروستار Prostar CNC</p><p><a href="#">سياسة الخصوصية</a> · <a href="#">الشروط والأحكام</a></p></div>
+  <div class="ftbot"><p>© 2026 بروستار Prostar CNC</p><p><a href="privacy.html">سياسة الخصوصية</a> · <a href="terms.html">الشروط والأحكام</a></p></div>
 </footer>
 
 <script>
@@ -256,5 +256,6 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
 const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('vis');});},{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 </script>
+  <script src="popup-loader.js" defer></script>
 </body>
 </html>

@@ -59,7 +59,7 @@ section{padding:100px 48px;}.ctn{max-width:1200px;margin:0 auto;}
 .blog-title{font-size:1.1rem;font-weight:800;color:var(--bg-dr);margin-bottom:10px;line-height:1.5;}
 .blog-title a{color:var(--bg-dr);text-decoration:none;transition:color .3s;}
 .blog-title a:hover{color:var(--teal-dk);}
-.blog-excerpt{font-size:.88rem;color:var(--gr-d);line-height:1.75;margin-bottom:20px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.blog-excerpt{font-size:.88rem;color:var(--gr-d);line-height:1.75;margin-bottom:20px;display:-webkit-box;line-clamp:3;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
 
 /* Read more button - gold/yellow like reference */
 .blog-cta{display:inline-block;padding:10px 28px;background:var(--gold);color:var(--bg-dr);border-radius:6px;font-size:.9rem;font-weight:700;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:var(--f);}
@@ -110,14 +110,14 @@ section{padding:100px 48px;}.ctn{max-width:1200px;margin:0 auto;}
 .rv{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94);}.rv.vis{opacity:1;transform:none;}
 
 @media(max-width:1024px){.blog-grid{grid-template-columns:repeat(2,1fr);}.blog-layout{grid-template-columns:1fr;}.ftg{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){section{padding:72px 20px;}.nav{padding:0 20px;}.nl{display:none;}.mt{display:flex;}.page-hero h1{font-size:2rem;}.blog-grid{grid-template-columns:1fr;}.ftg{grid-template-columns:1fr;gap:32px;}.ftbot{flex-direction:column;gap:12px;text-align:center;}.newsletter{padding:32px 24px;}}
+@media(max-width:768px){section{padding:72px 20px;}.nav{padding:0 20px;}.nl{display:none;}.mt{display:flex;}.nl{position:fixed;top:60px;right:0;left:0;background:var(--bg);flex-direction:column;padding:20px;transform:translateX(100%);transition:transform .3s;}.nl.show{transform:none;}.page-hero h1{font-size:2rem;}.blog-grid{grid-template-columns:1fr;}.ftg{grid-template-columns:1fr;gap:32px;}.ftbot{flex-direction:column;gap:12px;text-align:center;}.newsletter{padding:32px 24px;}}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <a href="index.html" class="nav-logo"><img src="images/Logo Prostar-01.png?v=2" alt="Prostar CNC"></a>
+  <a href="index.html" class="nav-logo"><img src="images/logo-new.png" alt="Prostar CNC"></a>
   <ul class="nl">
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="index.html#cats">الماكينات</a></li>
@@ -127,7 +127,7 @@ section{padding:100px 48px;}.ctn{max-width:1200px;margin:0 auto;}
     <li><a href="contact.html">تواصل معنا</a></li>
     <li><a href="quote.html" class="ncta">طلب عرض سعر</a></li>
   </ul>
-  <div class="mt"><span></span><span></span><span></span></div>
+  <div class="mt" onclick="document.querySelector('.nl').classList.toggle('show')"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- HERO -->
@@ -245,10 +245,10 @@ section{padding:100px 48px;}.ctn{max-width:1200px;margin:0 auto;}
 
         <!-- Pagination -->
         <div class="pagination">
-          <a href="#" class="page-btn active">1</a>
-          <a href="#" class="page-btn">2</a>
-          <a href="#" class="page-btn">3</a>
-          <a href="#" class="page-btn">←</a>
+          <a href="blog.html" class="page-btn active">1</a>
+          <a href="blog.html" class="page-btn">2</a>
+          <a href="blog.html" class="page-btn">3</a>
+          <a href="blog.html" class="page-btn">←</a>
         </div>
       </div>
 
@@ -262,22 +262,22 @@ section{padding:100px 48px;}.ctn{max-width:1200px;margin:0 auto;}
         <div class="sidebar-card">
           <h3>التصنيفات</h3>
           <ul>
-            <li><a href="#">فايبر ليزر <span class="count">8</span></a></li>
-            <li><a href="#">ليزر CO2 <span class="count">5</span></a></li>
-            <li><a href="#">CNC راوتر <span class="count">4</span></a></li>
-            <li><a href="#">الطابعات <span class="count">3</span></a></li>
-            <li><a href="#">دليل الشراء <span class="count">6</span></a></li>
-            <li><a href="#">الصيانة <span class="count">2</span></a></li>
+            <li><a href="machines.html">فايبر ليزر <span class="count">8</span></a></li>
+            <li><a href="machines.html">ليزر CO2 <span class="count">5</span></a></li>
+            <li><a href="machines.html">CNC راوتر <span class="count">4</span></a></li>
+            <li><a href="machines.html">الطابعات <span class="count">3</span></a></li>
+            <li><a href="blog.html">دليل الشراء <span class="count">6</span></a></li>
+            <li><a href="services.html">الصيانة <span class="count">2</span></a></li>
           </ul>
         </div>
 
         <div class="sidebar-card">
           <h3>أحدث المقالات</h3>
           <ul>
-            <li><a href="#">سعر ماكينة حفر ليزر صغيرة</a></li>
-            <li><a href="#">أفضل ماكينة سي ان سي 2026</a></li>
-            <li><a href="#">ماكينة الحفر بالليزر</a></li>
-            <li><a href="#">الفرق بين CO2 وفايبر</a></li>
+            <li><a href="article.html">سعر ماكينة حفر ليزر صغيرة</a></li>
+            <li><a href="article.html">أفضل ماكينة سي ان سي 2026</a></li>
+            <li><a href="article.html">ماكينة الحفر بالليزر</a></li>
+            <li><a href="article.html">الفرق بين CO2 وفايبر</a></li>
           </ul>
         </div>
 
@@ -285,7 +285,7 @@ section{padding:100px 48px;}.ctn{max-width:1200px;margin:0 auto;}
           <h3 style="border:none;padding:0;margin-bottom:12px;">تحتاج مساعدة؟</h3>
           <p style="color:var(--gr);font-size:.88rem;line-height:1.7;margin-bottom:18px;">فريقنا جاهز يساعدك تختار الماكينة المناسبة لمشروعك</p>
           <a href="quote.html" style="display:block;padding:12px;border-radius:10px;background:var(--teal);color:var(--bg-dr);text-align:center;font-weight:700;text-decoration:none;font-size:.92rem;transition:all .3s;">طلب عرض سعر</a>
-          <a href="https://wa.me/966566346686" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;background:#25D366;color:#fff;text-align:center;font-weight:700;text-decoration:none;font-size:.92rem;margin-top:10px;">
+          <a href="https://wa.me/966566346686" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;background:#25D366;color:#fff;text-align:center;font-weight:700;text-decoration:none;font-size:.92rem;margin-top:10px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
             واتساب مباشر
           </a>
@@ -309,12 +309,12 @@ section{padding:100px 48px;}.ctn{max-width:1200px;margin:0 auto;}
 <!-- FOOTER -->
 <footer class="ft">
   <div class="ftg">
-    <div class="ftb"><img src="images/Logo Prostar-01.png?v=2" alt="Prostar"><p>شريكك الموثوق في عالم ماكينات CNC والطابعات الصناعية.</p></div>
-    <div><h4>الماكينات</h4><ul><li><a href="#">فايبر ليزر</a></li><li><a href="#">ليزر CO2</a></li><li><a href="#">CNC راوتر</a></li></ul></div>
+    <div class="ftb"><img src="images/logo-new.png" alt="Prostar"><p>شريكك الموثوق في عالم ماكينات CNC والطابعات الصناعية.</p></div>
+    <div><h4>الماكينات</h4><ul><li><a href="machines.html">فايبر ليزر</a></li><li><a href="machines.html">ليزر CO2</a></li><li><a href="machines.html">CNC راوتر</a></li></ul></div>
     <div><h4>الخدمات</h4><ul><li><a href="quote.html">طلب عرض سعر</a></li><li><a href="services.html">خدماتنا</a></li><li><a href="blog.html">دليل المشتري</a></li></ul></div>
-    <div><h4>تواصل</h4><ul><li><a href="tel:+966566346686">966566346686+</a></li><li><a href="tel:+966566326686">966566326686+</a></li><li><a href="#">الرياض</a></li></ul></div>
+    <div><h4>تواصل</h4><ul><li><a href="tel:+966566346686">+966 566 346 686</a></li><li><a href="tel:+966566326686">+966 566 326 686</a></li><li><a href="contact.html">الرياض</a></li></ul></div>
   </div>
-  <div class="ftbot"><p>© 2026 بروستار Prostar CNC</p><p><a href="#">سياسة الخصوصية</a> · <a href="#">الشروط والأحكام</a></p></div>
+  <div class="ftbot"><p>© 2026 بروستار Prostar CNC</p><p><a href="privacy.html">سياسة الخصوصية</a> · <a href="terms.html">الشروط والأحكام</a></p></div>
 </footer>
 
 <script>
@@ -338,5 +338,6 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
   });
 });
 </script>
+  <script src="popup-loader.js" defer></script>
 </body>
 </html>
