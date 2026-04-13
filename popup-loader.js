@@ -1,5 +1,6 @@
 (function(){
   if(window.location.pathname.endsWith('/popup-welcome.html') || window.location.pathname.endsWith('popup-welcome.html')) return;
+  if(window.matchMedia && window.matchMedia('(max-width: 768px)').matches) return;
   fetch('popup-welcome.html')
     .then(function(response){
       if(!response.ok) throw new Error('Popup file not found');
